@@ -103,7 +103,7 @@ const ContactLists = ({
                             return (
                                 <CustomListItem
                                     key={index}
-                                    disableGutters
+                                    // disableGutters
                                     disablePadding
                                     cursor="true"
                                     onClick={() => handleChannelOnClick(item)}

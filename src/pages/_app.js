@@ -58,7 +58,7 @@ function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
         setViewFooter(true)
     }, [])
 
-    let persistor = persistStore(store)
+    // let persistor = persistStore(store)
 
     let zoneid = undefined
     if (typeof window !== 'undefined') {

@@ -16,7 +16,7 @@ const HomeLayoutNavbar = (props) => {
                 }}
             >
                 <Toolbar
-                    disableGutters
+                    // disableGutters
                     sx={{
                         minHeight: 64,
                         right: 0,

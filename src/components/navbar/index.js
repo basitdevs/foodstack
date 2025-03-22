@@ -119,7 +119,7 @@ const Navigation = () => {
     }, [global])
     return (
         <AppBarStyle
-            disableGutters={true}
+            // disableGutters={true}
             scrolling={
                 userLocation && router.pathname !== '/home' ? scrolling : false
             }

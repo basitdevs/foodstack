@@ -276,7 +276,9 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
         <NoSsr>
             <CustomNavBox isSticky={isSticky}>
                 <CustomContainer>
-                    <Toolbar disableGutters={true}>
+                    <Toolbar
+                    //  disableGutters={true}
+                     >
                         <CustomStackFullWidth
                             ref={searchBoxRef}
                             direction="row"

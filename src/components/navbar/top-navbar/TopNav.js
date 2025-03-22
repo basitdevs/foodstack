@@ -69,7 +69,7 @@ const TopNav = ({ cartListRefetch }) => {
             >
                 <Toolbar
                     sx={{ minHeight: '45px !important' }}
-                    disableGutters={true}
+                    // disableGutters={true}
                 >
                     <Container maxWidth="lg">
                         <Box
