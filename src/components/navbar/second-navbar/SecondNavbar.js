@@ -242,7 +242,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
         )
     }
     const handleShowSearch = () => {
-        if ((router.pathname === '/home' && location) || openSearchBox) {
+        if ((router.pathname === '/' && location) || openSearchBox) {
             return (
                 <Box sx={{ minWidth: '450px', marginInlineEnd: '20px' }}>
                     <SearchBox
