@@ -974,8 +974,8 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                 </ProductDetailsWrapper>
 
                                 {trackData?.data?.order_reference
-                                    ?.token_number ||
-                                    (trackData?.data?.order_reference
+                                    ?.token_number &&
+                                    trackData?.data?.order_reference
                                         ?.table_number && (
                                         <ProductDetailsWrapper>
                                             <Stack
@@ -988,25 +988,24 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                 width="100%"
                                                 padding="5px"
                                             >
-                                                {/* Token Number */}
-                                                {trackData?.data
-                                                    ?.order_reference
-                                                    ?.token_number && (
-                                                    <Stack
-                                                        width="100%"
-                                                        justifyContent="center"
-                                                        alignItems="center"
+                                                <Stack
+                                                    width="100%"
+                                                    justifyContent="center"
+                                                    alignItems="center"
+                                                >
+                                                    <Typography
+                                                        fontSize="14px"
+                                                        fontWeight="600"
+                                                        component="span"
                                                     >
-                                                        <Typography
-                                                            fontSize="14px"
-                                                            fontWeight="600"
-                                                            component="span"
-                                                        >
-                                                            {
-                                                                trackData.data
-                                                                    .order_reference
-                                                                    .token_number
-                                                            }
+                                                        {trackData?.data
+                                                            ?.order_reference
+                                                            ?.token_number ??
+                                                            ''}
+
+                                                        {trackData?.data
+                                                            ?.order_reference
+                                                            ?.token_number && (
                                                             <Typography
                                                                 paddingInlineStart="5px"
                                                                 component="span"
@@ -1022,50 +1021,43 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                                     '(Token No.)'
                                                                 )}
                                                             </Typography>
-                                                        </Typography>
-                                                    </Stack>
-                                                )}
-
-                                                {/* Divider */}
-                                                {trackData?.data
-                                                    ?.order_reference
-                                                    ?.token_number &&
-                                                    trackData?.data
-                                                        ?.order_reference
-                                                        ?.table_number && (
-                                                        <Stack
-                                                            height="100%"
-                                                            border="1px solid"
-                                                            borderColor={
-                                                                theme.palette
-                                                                    .neutral[400]
-                                                            }
-                                                        />
-                                                    )}
-
-                                                {/* Table Number */}
-                                                {trackData?.data
-                                                    ?.order_reference
-                                                    ?.table_number && (
-                                                    <Typography
-                                                        width="100%"
-                                                        textAlign="center"
-                                                        fontSize="12px"
-                                                        color={
-                                                            theme.palette.info
-                                                                .main
-                                                        }
-                                                    >
-                                                        {`${t('Table No-')} ${
-                                                            trackData.data
-                                                                .order_reference
-                                                                .table_number
-                                                        }`}
+                                                        )}
                                                     </Typography>
-                                                )}
+                                                </Stack>
+                                                <Stack
+                                                    height="100%"
+                                                    border="1px solid"
+                                                    borderColor={
+                                                        theme.palette
+                                                            .neutral[400]
+                                                    }
+                                                ></Stack>
+
+                                                <Typography
+                                                    width="100%"
+                                                    textAlign="center"
+                                                    fontSize="12px"
+                                                    color={
+                                                        theme.palette.info.main
+                                                    }
+                                                >
+                                                    {trackData?.data
+                                                        ?.order_reference
+                                                        ?.table_number &&
+                                                        `${t('Table No-')} ${
+                                                            trackData?.data
+                                                                ?.order_reference
+                                                                ?.table_number
+                                                                ? trackData
+                                                                      ?.data
+                                                                      ?.order_reference
+                                                                      ?.table_number
+                                                                : ''
+                                                        }`}
+                                                </Typography>
                                             </Stack>
                                         </ProductDetailsWrapper>
-                                    ))}
+                                    )}
 
                                 {trackData &&
                                     trackData?.data?.delivery_instruction &&
@@ -1143,37 +1135,40 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                             </InstructionWrapper>
                                         </Stack>
                                     )}
-                                {trackData && trackData?.data?.order_note && (
-                                    <Stack gap="10px">
-                                        <TitleTypography>
-                                            {t('Order note')}
-                                        </TitleTypography>
-                                        <InstructionWrapper>
-                                            {trackData ? (
-                                                <Typography
-                                                    component="span"
-                                                    textTransform="capitalize"
-                                                    align="left"
-                                                    fontSize="14px"
-                                                    color={
-                                                        theme.palette
-                                                            .neutral[400]
-                                                    }
-                                                >
-                                                    {t(
-                                                        trackData?.data
-                                                            ?.order_note
-                                                    )}
-                                                </Typography>
-                                            ) : (
-                                                <Skeleton
-                                                    width="100px"
-                                                    variant="text"
-                                                />
-                                            )}
-                                        </InstructionWrapper>
-                                    </Stack>
-                                )}
+                                {trackData &&
+                                    trackData?.data?.order_note &&
+                                    trackData?.data?.order_type ===
+                                        'delivery' && (
+                                        <Stack gap="10px">
+                                            <TitleTypography>
+                                                {t('Order note')}
+                                            </TitleTypography>
+                                            <InstructionWrapper>
+                                                {trackData ? (
+                                                    <Typography
+                                                        component="span"
+                                                        textTransform="capitalize"
+                                                        align="left"
+                                                        fontSize="14px"
+                                                        color={
+                                                            theme.palette
+                                                                .neutral[400]
+                                                        }
+                                                    >
+                                                        {t(
+                                                            trackData?.data
+                                                                ?.order_note
+                                                        )}
+                                                    </Typography>
+                                                ) : (
+                                                    <Skeleton
+                                                        width="100px"
+                                                        variant="text"
+                                                    />
+                                                )}
+                                            </InstructionWrapper>
+                                        </Stack>
+                                    )}
                                 <Stack gap="25px">
                                     <TitleTypography>
                                         {t('Restaurants Information')}

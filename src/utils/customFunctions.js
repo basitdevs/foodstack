@@ -1209,12 +1209,10 @@ export function checkInput(input) {
 }
 
 export function formatPhoneNumber(number) {
-    if (number) {
-        const str = number?.toString()
-        if (str.startsWith('+')) {
-            return str
-        } else {
-            return `+${str}`
-        }
+    const str = number?.toString()
+    if (str.startsWith('+')) {
+        return str
+    } else {
+        return `+${str}`
     }
 }

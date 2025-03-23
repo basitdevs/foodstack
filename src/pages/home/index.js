@@ -15,6 +15,7 @@ const HomePage = ({ configData, landingPageData, pathName }) => {
         </>
     )
 }
+
 HomePage.getLayout = (page) => <HomeGuard>{page}</HomeGuard>
 
 export default HomePage
