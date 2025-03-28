@@ -3,8 +3,6 @@ import Meta from '../../components/Meta'
 import HomeGuard from '../../components/home-guard/HomeGuard'
 import { getServerSideProps } from '../index'
 const HomePage = ({ configData, landingPageData, pathName }) => {
-
-
     return (
         <>
             <Meta

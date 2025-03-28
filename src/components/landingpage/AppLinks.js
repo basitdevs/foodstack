@@ -43,7 +43,7 @@ const AppLinks = ({ download_app_data, isFooter }) => {
             sx={{ mt: 2 }}
             gap={languageDirection === 'rtl' && '10px'}
         >
-            {download_app_data?.react_download_apps_play_store
+            {/* {download_app_data?.react_download_apps_play_store
                 ?.react_download_apps_play_store_status === '1' && (
                 <CustomButton
                     backgroundColor={backgroundColor}
@@ -78,7 +78,7 @@ const AppLinks = ({ download_app_data, isFooter }) => {
                         </Stack>
                     </Stack>
                 </CustomButton>
-            )}
+            )} */}
 
             {download_app_data?.react_download_apps_app_store
                 ?.react_download_apps_link_status === '1' && (

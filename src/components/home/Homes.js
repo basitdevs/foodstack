@@ -240,11 +240,13 @@ const Homes = ({ configData }) => {
             <CustomContainer>
                 <CustomStackFullWidth
                     sx={{
-                        marginTop: { xs: '60px', md: '130px' },
+                        marginTop: { xs: '70px', md: '150px' },
                         marginBottom: '10px',
                         direction: 'row',
                     }}
                 >
+                    <FeatureCatagories height="70px" />
+
                     <Stack
                         direction="row"
                         width="100%"
@@ -335,8 +337,24 @@ const Homes = ({ configData }) => {
                         <Banner bannerIsLoading={bannerIsLoading} />
                     </CustomContainer>
                     <Box>
-                        <FeatureCatagories height="70px" />
                         <CustomContainer>
+                            {global && <Cuisines />}
+                            <Restaurant />
+                            <NewRestaurant />
+                            <CustomContainer>
+                                <DifferentFoodCompontent
+                                    campaignIsloading={campaignIsloading}
+                                    isLoading={isLoading}
+                                    isLoadingNearByPopularRestaurantData={
+                                        isLoadingNearByPopularRestaurantData
+                                    }
+                                />
+
+                                {global?.banner_data
+                                    ?.promotional_banner_image && (
+                                    <PromotionalBanner global={global} />
+                                )}
+                            </CustomContainer>
                             <VisitAgain />
                             <AddsSection
                                 data={addStores}
@@ -347,23 +365,6 @@ const Homes = ({ configData }) => {
                             ) : null}
                         </CustomContainer>
                     </Box>
-                    <CustomContainer>
-                        <DifferentFoodCompontent
-                            campaignIsloading={campaignIsloading}
-                            isLoading={isLoading}
-                            isLoadingNearByPopularRestaurantData={
-                                isLoadingNearByPopularRestaurantData
-                            }
-                        />
-                        <NewRestaurant />
-                        {global && <Cuisines />}
-
-                        {global?.banner_data?.promotional_banner_image && (
-                            <PromotionalBanner global={global} />
-                        )}
-
-                        <Restaurant />
-                    </CustomContainer>
                 </>
             )}
 

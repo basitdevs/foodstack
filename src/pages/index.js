@@ -8,9 +8,9 @@
 // import { CustomHeader } from '@/api/Headers'
 // import { checkMaintenanceMode } from '@/utils/customFunctions'
 
-import HomeGuard from "@/components/home-guard/HomeGuard"
-import Homes from "@/components/home/Homes"
-import Meta from "@/components/Meta"
+import HomeGuard from '@/components/home-guard/HomeGuard'
+import Homes from '@/components/home/Homes'
+import Meta from '@/components/Meta'
 
 // const Home = ({ configData, landingPageData }) => {
 //     const router = useRouter()
