@@ -93,9 +93,11 @@ const FeatureCatagories = () => {
     return (
         <Card
             sx={{
-                paddingTop: categoryIsSticky && '.5rem',
-                position: 'sticky',
-                top: { xs: '91px', md: '108px' },
+                // paddingTop: categoryIsSticky && '1rem',
+                // position: 'sticky',
+                paddingTop:{ xs: '100px', md: '130px'},
+                top: { xs: '100px', md: '130px' },
+                marginTop:'1rem',
                 zIndex: 1100,
                 background: (theme) => theme.palette.neutral[1800],
                 boxShadow: categoryIsSticky
@@ -103,7 +105,7 @@ const FeatureCatagories = () => {
                     : 'none',
             }}
         >
-            <CustomContainer>
+            <CustomContainer >
                 <Grid
                     container
                     ref={catOffsetElementRef}

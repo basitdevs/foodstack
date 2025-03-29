@@ -55,9 +55,17 @@ const FooterMiddle = ({ landingPageData, isLoading }) => {
                         >
                             {global ? (
                                 <Link href={zoneid ? '/home' : '/'}>
-                                    <LogoSide
+                                    {/* <LogoSide
                                         global={global}
                                         businessLogo={businessLogo}
+                                    /> */}
+                                    <img
+                                        src="/logo.png"
+                                        alt="LOOG"
+                                        style={{
+                                            width: '180px',
+                                            objectFit: 'cover',
+                                        }}
                                     />
                                 </Link>
                             ) : (
@@ -82,7 +90,7 @@ const FooterMiddle = ({ landingPageData, isLoading }) => {
                                 </Typography>
                             )}
                             <ContactInfo global={global} />
-                            {isLoading ? (
+                            {/* {isLoading ? (
                                 <Stack direction="row" gap={1}>
                                     <CustomSkelenton width={140} height={40} />
                                     <CustomSkelenton width={140} height={40} />
@@ -96,7 +104,7 @@ const FooterMiddle = ({ landingPageData, isLoading }) => {
                                         landingPageData?.download_app_section
                                     }
                                 />
-                            )}
+                            )} */}
                         </CustomStackFullWidth>
                     </Grid>
                     <Grid

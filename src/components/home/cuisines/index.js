@@ -107,96 +107,126 @@ const Cuisines = () => {
                         </CustomStackFullWidth>
                     ) : (
                         cuisines?.length > 0 && (
-                            <Grid
-                                container
-                                sx={{
-                                    paddingTop: { xs: '1rem', sm: '1.9rem' },
-                                }}
-                                gap="1.2rem"
-                            >
-                                <Grid item xs={12} md={12}>
-                                    <CustomStackFullWidth
-                                        direction="row"
-                                        alignItems="center"
-                                        justifyContent="space-between"
-                                    >
-                                        <Stack
-                                            direction="row"
-                                            justifyContent="space-between"
-                                            width="100%"
-                                        >
-                                            <Stack direction="row" spacing={1}>
-                                                <CustomImageContainer
-                                                    src={cuisine_image.src}
-                                                    width="26px"
-                                                    height="26px"
-                                                />
-                                                <Typography
-                                                    fontSize={{
-                                                        xs: '16px',
-                                                        md: '20px',
-                                                    }}
-                                                    fontWeight={{
-                                                        xs: '500',
-                                                        md: '700',
-                                                    }}
-                                                    color={
-                                                        theme.palette
-                                                            .neutral[1000]
-                                                    }
-                                                >
-                                                    {t('Cuisines')}
-                                                </Typography>
-                                            </Stack>
+                            // <Grid
+                            //     container
+                            //     sx={{
+                            //         paddingTop: { xs: '1rem', sm: '1.9rem' },
+                            //     }}
+                            //     gap="1.2rem"
+                            // >
+                            //     <Grid item xs={12} md={12}>
+                            //         <CustomStackFullWidth
+                            //             direction="row"
+                            //             alignItems="center"
+                            //             justifyContent="space-between"
+                            //         >
+                            //             <Stack
+                            //                 direction="row"
+                            //                 justifyContent="space-between"
+                            //                 width="100%"
+                            //             >
+                            //                 <Stack direction="row" spacing={1}>
+                            //                     <CustomImageContainer
+                            //                         src={cuisine_image.src}
+                            //                         width="26px"
+                            //                         height="26px"
+                            //                     />
+                            //                     <Typography
+                            //                         fontSize={{
+                            //                             xs: '16px',
+                            //                             md: '20px',
+                            //                         }}
+                            //                         fontWeight={{
+                            //                             xs: '500',
+                            //                             md: '700',
+                            //                         }}
+                            //                         color={
+                            //                             theme.palette
+                            //                                 .neutral[1000]
+                            //                         }
+                            //                     >
+                            //                         {t('Cuisines')}
+                            //                     </Typography>
+                            //                 </Stack>
 
-                                            <CustomViewAll
-                                                onClick={() =>
-                                                    router.push('/cuisines')
-                                                }
-                                                sx={{ marginInlineEnd: '10px' }}
-                                            >
-                                                {t('Explore More')}
-                                            </CustomViewAll>
-                                        </Stack>
-                                    </CustomStackFullWidth>
-                                </Grid>
+                            //                 <CustomViewAll
+                            //                     onClick={() =>
+                            //                         router.push('/cuisines')
+                            //                     }
+                            //                     sx={{ marginInlineEnd: '10px' }}
+                            //                 >
+                            //                     {t('Explore More')}
+                            //                 </CustomViewAll>
+                            //             </Stack>
+                            //         </CustomStackFullWidth>
+                            //     </Grid>
+                            //     <Grid
+                            //         item
+                            //         container
+                            //         xs={12}
+                            //         sm={12}
+                            //         md={12}
+                            //         sx={{
+                            //             position: 'relative',
+                            //             transition:
+                            //                 'height 0.5s linear, width 0.5s linear',
+                            //         }}
+                            //         onMouseEnter={() => setHoverOn(true)}
+                            //         onMouseLeave={() => setHoverOn(false)}
+                            //     >
+                            //         {cuisines && cuisines?.length > 0 && (
+                            //             <Grid item xs={12} md={12}>
+                            //                 <SliderCustom>
+                            //                     <Slider
+                            //                         {...settings}
+                            //                         ref={sliderRef}
+                            //                     >
+                            //                         {cuisines?.map(
+                            //                             (item, index) => {
+                            //                                 return (
+                            //                                     <CuisinesCard
+                            //                                         item={item}
+                            //                                         key={index}
+                            //                                     />
+                            //                                 )
+                            //                             }
+                            //                         )}
+                            //                     </Slider>
+                            //                 </SliderCustom>
+                            //             </Grid>
+                            //         )}
+                            //     </Grid>
+                            // </Grid>
+                            <>
+                                {/* Cuisines Cards Grid */}
                                 <Grid
                                     item
                                     container
                                     xs={12}
-                                    sm={12}
-                                    md={12}
-                                    sx={{
-                                        position: 'relative',
-                                        transition:
-                                            'height 0.5s linear, width 0.5s linear',
-                                    }}
+                                    spacing={2}
+                                    marginTop={'30px'}
+                                    marginBottom={'30px'}
                                     onMouseEnter={() => setHoverOn(true)}
                                     onMouseLeave={() => setHoverOn(false)}
                                 >
-                                    {cuisines && cuisines?.length > 0 && (
-                                        <Grid item xs={12} md={12}>
-                                            <SliderCustom>
-                                                <Slider
-                                                    {...settings}
-                                                    ref={sliderRef}
-                                                >
-                                                    {cuisines?.map(
-                                                        (item, index) => {
-                                                            return (
-                                                                <CuisinesCard
-                                                                    item={item}
-                                                                    key={index}
-                                                                />
-                                                            )
-                                                        }
-                                                    )}
-                                                </Slider>
-                                            </SliderCustom>
+                                    {cuisines?.map((item, index) => (
+                                        <Grid
+                                            key={index}
+                                            item
+                                            xs={6}
+                                            sm={6}
+                                            md={3}
+                                        >
+                                            <CuisinesCard
+                                                item={item}
+                                                sx={{
+                                                    overflow: 'hidden',
+                                                }}
+                                            />
                                         </Grid>
-                                    )}
+                                    ))}
                                 </Grid>
-                            </Grid>
+                            </>
                         )
                     )}
                 </>

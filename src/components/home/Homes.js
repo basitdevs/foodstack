@@ -237,16 +237,16 @@ const Homes = ({ configData }) => {
 
     return (
         <PushNotificationLayout>
+            <FeatureCatagories height="70px" />
+
             <CustomContainer>
                 <CustomStackFullWidth
                     sx={{
-                        marginTop: { xs: '70px', md: '150px' },
+                        marginTop: { xs: '60px', md: '80px' },
                         marginBottom: '10px',
                         direction: 'row',
                     }}
                 >
-                    <FeatureCatagories height="70px" />
-
                     <Stack
                         direction="row"
                         width="100%"

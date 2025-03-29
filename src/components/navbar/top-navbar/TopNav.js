@@ -91,10 +91,20 @@ const TopNav = ({ cartListRefetch }) => {
                                     spacing={2}
                                 >
                                     {global ? (
-                                        <LogoSide
-                                            global={global}
-                                            width="unset"
-                                            businessLogo={businessLogo}
+                                        // <LogoSide
+                                        //     global={global}
+                                        //     width="unset"
+                                        //     businessLogo={businessLogo}
+                                        // />
+                                        <img
+                                            src="/logo.png"
+                                            alt="LOOG"
+                                            style={{
+                                                width: isSmall
+                                                    ? '90px'
+                                                    : '180px',
+                                                objectFit: 'cover',
+                                            }}
                                         />
                                     ) : (
                                         <Skeleton width="40px" />
