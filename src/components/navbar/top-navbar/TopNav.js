@@ -101,8 +101,8 @@ const TopNav = ({ cartListRefetch }) => {
                                             alt="LOOG"
                                             style={{
                                                 width: isSmall
-                                                    ? '90px'
-                                                    : '180px',
+                                                    ? '100px'
+                                                    : '205px',
                                                 objectFit: 'cover',
                                             }}
                                         />
