@@ -154,7 +154,9 @@ export const getServerSideProps = async (context) => {
                     'X-localization': language,
                     origin: process.env.NEXT_CLIENT_HOST_URL,
                 },
-            }
+            }   
+
+            
         )
 
         if (!configRes.ok) {
